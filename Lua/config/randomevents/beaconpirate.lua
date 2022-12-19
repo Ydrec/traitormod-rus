@@ -25,7 +25,7 @@ event.Start = function ()
             local interface = item.GetComponentString("CustomInterface")
 
             interface.customInterfaceElementList[1].State = true
-            interface.customInterfaceElementList[2].Signal = "Last known pirate position"
+            interface.customInterfaceElementList[2].Signal = "Последняя известная позиция пирата"
 
             item.CreateServerEvent(interface, interface)
 
@@ -63,7 +63,7 @@ event.Start = function ()
 
     event.ItemReward = character.Inventory.GetItemInLimbSlot(InvSlotType.Card)
 
-    local text = "There have been reports about a notorious pirate with a PUCS suit terrorizing these waters, the pirate was detected recently inside a beacon station - eliminate the pirate and collect their identification card to claim a reward of " .. event.AmountPoints .. " points."
+    local text = "Поступали сообщения о печально известном пирате в костюме PUCS, терроризирующем эти воды. Недавно пират был обнаружен на станции маяка - уничтожьте пирата и заберите его идентификационную карту, чтобы получить вознаграждение в размере " .. event.AmountPoints .. " очков."
     Traitormod.RoundEvents.SendEventMessage(text, "CrewWalletIconLarge")
 
     Hook.Add("think", "BeaconPirate.Think", function ()
@@ -76,7 +76,7 @@ event.Start = function ()
 
             if client ~= nil then
                 Traitormod.AwardPoints(client, event.AmountPoints)
-                Traitormod.SendMessage(client, "You have received " .. event.AmountPoints .. " points.", "InfoFrameTabButton.Mission")
+                Traitormod.SendMessage(client, "Вы получили " .. event.AmountPoints .. " очков.", "InfoFrameTabButton.Mission")
 
                 event.End()
             end
@@ -90,7 +90,7 @@ event.End = function (isEndRound)
 
     if isEndRound then return end
 
-    local text = "The PUCS pirate has been killed, the brave crewmate that killed the pirate has been rewarded with " .. event.AmountPoints .. " points."
+    local text = "Пират в PUCS был убит, храбрый член экипажа, убивший пирата, был награжден " .. event.AmountPoints .. " очков."
     Traitormod.RoundEvents.SendEventMessage(text, "CrewWalletIconLarge")
 end
 

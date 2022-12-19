@@ -1,6 +1,6 @@
 local category = {}
 
-category.Name = "Death Spawn"
+category.Name = "Возрождение"
 category.Decoration = "huskinvite"
 
 category.CanAccess = function(client)
@@ -43,7 +43,7 @@ end
 
 category.Products = {
     {
-        Name = "Spawn as Crawler",
+        Name = "Появиться как Ползун",
         Price = 450,
         Limit = 4,
         IsLimitGlobal = true,
@@ -56,7 +56,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Legacy Crawler",
+        Name = "Появиться как Ползун(старая модель)",
         Price = 400,
         Limit = 4,
         IsLimitGlobal = true,
@@ -69,7 +69,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Crawler Baby",
+        Name = "Появиться как детеныш Ползуна",
         Price = 250,
         Limit = 5,
         IsLimitGlobal = true,
@@ -82,7 +82,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Mudraptor Baby",
+        Name = "Появиться как детеныш Грязевого раптора",
         Price = 400,
         Limit = 5,
         IsLimitGlobal = true,
@@ -95,7 +95,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Thresher Baby",
+        Name = "Появиться как детеныш Акульего тигра",
         Price = 800,
         Limit = 5,
         IsLimitGlobal = true,
@@ -108,7 +108,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Spineling",
+        Name = "Появиться как Шипостай",
         Price = 400,
         Limit = 4,
         IsLimitGlobal = true,
@@ -121,7 +121,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Mudraptor",
+        Name = "Появиться как Грязевой раптор",
         Price = 1200,
         Limit = 3,
         IsLimitGlobal = true,
@@ -134,7 +134,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Mantis",
+        Name = "Появиться как Креветка",
         Price = 1600,
         Limit = 2,
         IsLimitGlobal = true,
@@ -147,7 +147,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Husk",
+        Name = "Появится как Хаск",
         Price = 2300,
         Limit = 2,
         IsLimitGlobal = true,
@@ -160,7 +160,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Bone Thresher",
+        Name = "Появиться как Костолом",
         Price = 2400,
         Limit = 2,
         IsLimitGlobal = true,
@@ -174,7 +174,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Tiger Thresher",
+        Name = "Появиться как Акулий тигр",
         Price = 3000,
         Limit = 2,
         IsLimitGlobal = true,
@@ -188,7 +188,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Hammerhead",
+        Name = "Появиться как Молотоглав",
         Price = 5000,
         Limit = 2,
         IsLimitGlobal = true,
@@ -202,7 +202,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Fractal Guardian",
+        Name = "Появиться как Фрактальный Страж",
         Price = 6500,
         Limit = 1,
         IsLimitGlobal = true,
@@ -215,7 +215,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Veteran Mudraptor",
+        Name = "Появиться как Ветеран мудраптор",
         Price = 10000,
         Limit = 2,
         IsLimitGlobal = true,
@@ -229,7 +229,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Charybdis",
+        Name = "Появиться как Харибда",
         Price = 150000,
         Limit = 1,
         IsLimitGlobal = true,
@@ -242,7 +242,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Peanut",
+        Name = "Появиться как Арахис(Питомец)",
         Price = 50,
         Limit = 2,
         IsLimitGlobal = false,
@@ -253,7 +253,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Orange Boy",
+        Name = "Появиться как Оранжевый парень(Питомец)",
         Price = 50,
         Limit = 2,
         IsLimitGlobal = false,
@@ -264,7 +264,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Cthulhu",
+        Name = "Появиться как Ктулху(Питомец)",
         Price = 50,
         Limit = 2,
         IsLimitGlobal = false,
@@ -275,7 +275,7 @@ category.Products = {
     },
 
     {
-        Name = "Spawn as Psilotoad",
+        Name = "Появиться как Псилотоад(Питомец)",
         Price = 50,
         Limit = 2,
         IsLimitGlobal = false,

@@ -30,7 +30,7 @@ event.Start = function ()
         end
     end
 
-    local text = "High concentration of ballast flora spores has been detected in this area, it's advised to search pumps for ballast flora!"
+    local text = "В этой зоне обнаружена высокая концентрация спор балластной флоры, рекомендуется провести поиск насосов на наличие балластной флоры!"
     Traitormod.RoundEvents.SendEventMessage(text, "EndRoundButton")
 
     event.End()

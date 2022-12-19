@@ -2,45 +2,45 @@ local config = {}
 config.DebugLogs = true
 
 ----- USER FEEDBACK -----
-config.Language = "Russian"
+config.Language = "English"
 config.SendWelcomeMessage = true
 config.ChatMessageType = ChatMessageType.Private    -- Error = red | Private = green | Dead = blue | Radio = yellow
 
 ----- GAMEPLAY -----
 config.Codewords = {
-    "корпус", "табак", "ерунда", "рыба", "клоун", "навигатор", "быстро", "возможность",
-	"таламус", "голодный", "вода", "вид", "ренегат", "злой", "зеленый", "тонуть", "резина",
-	"маска", "сладкий", "лед", "Харибда", "культ", "секрет", "частота",
-	"шелуха", "ржавчина", "руины", "красный", "лодка", "кошки", "крысы", "взрыв",
-	"шина", "ствол", "оружие", "костоломы", "груз", "метод", "обезьяна"
+    "hull", "tabacco", "nonsense", "fish", "clown", "quartermaster", "fast", "possibility",
+	"thalamus", "hungry", "water", "looks", "renegade", "angry", "green", "sink", "rubber",
+	"mask", "sweet", "ice", "charybdis", "cult", "secret", "frequency",
+	"husk", "rust", "ruins", "red", "boat", "cats", "rats", "blast",
+	"tire", "trunk", "weapons", "threshers", "cargo", "method", "monkey"
 }
 
 config.AmountCodeWords = 2
 
-config.OptionalTraitors = true        -- игроки могут использовать !toggletraitor
-config.TraitorBroadcast = true      -- предатели могут сообщать другим предателям, используя !tc
-config.TraitorBroadcastHearable = false      -- если true, !tc будет слышен поблизости через локальный чат
-config.TraitorDm = false            -- предатели могут отправлять прямые сообщения другим игрокам, используя !tdm
+config.OptionalTraitors = true        -- players can use !toggletraitor
+config.TraitorBroadcast = true      -- traitors can broadcast to other traitors using !tc
+config.TraitorBroadcastHearable = false      -- if true, !tc will be hearable in the vicinity via local chat
+config.TraitorDm = false            -- traitors can send direct messages to other players using !tdm
 
-config.OptionalTraitors = true        -- игроки могут использовать !toggletraitor
+config.OptionalTraitors = true        -- players can use !toggletraitor
 config.RagdollOnDisconnect = false
-config.EnableControlHusk = false     -- ЭКСПЕРИМЕНТАЛЬНО: возможность управлять хаском после смерти
+config.EnableControlHusk = false     -- EXPERIMENTAL: enable to control husked character after death
 
--- Это переопределяет шаттл респауна в игре и использует его в качестве инжектора подводных лодок, чтобы легко спавнить подводные лодки в игре. Респаун будет работать, как и ожидается, но файл шаттла с подводными лодками должен быть добавлен сюда вручную.
--- Примечание: Если эта функция отключена, traitormod отключит все функции, связанные с спавном подводных лодок.
+-- This overrides the game's respawn shuttle, and uses it as a submarine injector, to spawn submarines in game easily. Respawn should still work as expected, but the shuttle submarine file needs to be manually added here.
+-- Note: If this is disabled, traitormod will disable all functions related to submarine spawning.
 config.OverrideRespawnSubmarine = false
 config.RespawnSubmarineFile = "Content/Submarines/Selkie.sub"
 
 ----- POINTS + LIVES -----
-config.PermanentPoints = true      -- устанавливает, будут ли очки и жизни храниться в файле и загружаться из него
-config.PermanentStatistics = true  -- устанавливает, следует ли хранить статистику в файле и загружать ее из файла
+config.PermanentPoints = true      -- sets if points and lives will be stored in and loaded from a file
+config.PermanentStatistics = true  -- sets if statistics be stored in and loaded from a file
 config.MaxLives = 5
 config.MinRoundTimeToLooseLives = 180
 config.RespawnedPlayersDontLooseLives = true
-config.MaxExperienceFromPoints = 50000     -- если не ноль, то это количество - максимальный опыт, получаемый игроками за накопленные очки (30k = lvl 10 | 38400 = lvl 12).
+config.MaxExperienceFromPoints = 50000     -- if not nil, this amount is the maximum experience players gain from stored points (30k = lvl 10 | 38400 = lvl 12)
 config.RemoveSkillBooks = true
 
-config.FreeExperience = 50         -- временный опыт, получаемый каждые ExperienceTimer секунд
+config.FreeExperience = 50         -- temporary experience given every ExperienceTimer seconds
 config.ExperienceTimer = 120
 
 config.DistanceToEndOutpostRequired = 5000
@@ -63,11 +63,11 @@ config.AmountExperienceWithPoints = function (x)
     return x * 0.5
 end
 
--- Придавать вес в зависимости от логарифма опыта
--- 100 опыта = 4 шанса
--- 1000 опыта = 6 шансов
+-- Give weight based on the logarithm of experience
+-- 100 experience = 4 chance
+-- 1000 experience = 6 chance
 config.AmountWeightWithPoints = function (x)
-    return math.log(x + 10) -- добавьте 1, потому что логарифм 0 равен -бесконечности
+    return math.log(x + 10) -- add 1 because log of 0 is -infinity
 end
 
 ----- OBJECTIVES -----
@@ -106,7 +106,7 @@ config.GamemodeConfig = {
     Assassination = {
         Enabled = true,
         WeightChance = 50,
-        EndOnComplete = true,           -- завершить раунд, когда не останется ни одной цели для убийства.
+        EndOnComplete = true,           -- end round when there are no assassination targets left
         EndGameDelaySeconds = 5,
 
         StartDelayMin = 120,
@@ -116,7 +116,7 @@ config.GamemodeConfig = {
 
         SelectBotsAsTargets = true,
         SelectPiratesAsTargets = false,
-        SelectUniqueTargets = true,     -- каждая цель предателя может быть выбрана только один раз для каждого предателя (респаун + ложь -> нет конца)
+        SelectUniqueTargets = true,     -- every traitor target can only be chosen once per traitor (respawn+false -> no end)
         PointsPerAssassination = 100,
 
         -- Codewords, Names, None
@@ -132,11 +132,11 @@ config.GamemodeConfig = {
             if amountPlayers > 7 then return 2 end            
             if amountPlayers > 3 then return 1 end
             if amountPlayers == 1 then 
-                Traitormod.SendMessageEveryone("Режим тестирования 1 игрока - нет возможности набрать или потерять очки") 
+                Traitormod.SendMessageEveryone("1P testing mode - no points can be gained or lost") 
                 config.TestMode = true
                 return 1
             end
-            print("Недостаточно игроков для запуска режима предателя.")
+            print("Not enough players to start traitor mode.")
             return 0
         end,
 

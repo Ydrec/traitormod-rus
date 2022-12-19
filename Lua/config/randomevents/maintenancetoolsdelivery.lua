@@ -35,7 +35,7 @@ event.Start = function ()
         end
     end)
 
-    local text = "A delivery of maintenance tools has been made into the cargo area of the ship. The supplies are inside a yellow crate."
+    local text = "В грузовой отсек корабля доставлены инструменты для технического обслуживания. Инструменты находятся в желтом ящике."
     Traitormod.RoundEvents.SendEventMessage(text, "GameModeIcon.sandbox")
 
     event.End()

@@ -55,7 +55,7 @@ local traitorsEnabled = -1
 local pointsGiveTimer = -1
 
 Traitormod.OnRoundStart = function()
-    Traitormod.Log("Starting traitor round - Traitor Mod v" .. Traitormod.VERSION)
+    Traitormod.Log("Начало раунда c предателем - Traitor Mod v" .. Traitormod.VERSION)
     pointsGiveTimer = Timer.GetTime() + Traitormod.Config.ExperienceTimer
 
     -- give XP to players based on stored points
@@ -67,7 +67,7 @@ Traitormod.OnRoundStart = function()
         if not value.SpectateOnly then 
             Traitormod.LoadExperience(value)
         else
-            Traitormod.Debug("Skipping load experience for spectator " .. value.Name)
+            Traitormod.Debug("Пропуск загрузки опыта для зрителей" .. value.Name)
         end
 
         -- Send Welcome message
@@ -87,13 +87,13 @@ Traitormod.OnRoundStart = function()
 
     traitorsEnabled = Game.ServerSettings.TraitorsEnabled
     if traitorsEnabled == 0 then
-        Traitormod.Log("Traitors are disabled.")
+        Traitormod.Log("Предатели отключены.")
         return
     elseif traitorsEnabled == 1 then
         local rng = math.random()
         if rng < 0.5 then
             traitorsEnabled = 0
-            Traitormod.Log("No traitors on this mission...")
+            Traitormod.Log("В этой миссии нет предателей...")
             return
         end
     end
@@ -178,19 +178,19 @@ Hook.Add("missionsEnded", "Traitormod.MissionsEnded", function (missions)
         endMessage = Traitormod.Language.RoundSummary .. "\n\n" .. Traitormod.Language.NoTraitors
     else
         local gameModeMessage = Traitormod.SelectedGamemode.GetRoundSummary()
-        Traitormod.Debug(string.format("Round %d ended | traitorsEnabled = %d | crewMissionsComplete = %s | endReached = %s", Traitormod.RoundNumber, traitorsEnabled, tostring(crewMissionsComplete), tostring(crewReachedEnd)))
+        Traitormod.Debug(string.format("Закончился раунд %d | предатели включены = %d | Миссии экипажа завершены = %s | конец достигнут = %s", Traitormod.RoundNumber, traitorsEnabled, tostring(crewMissionsComplete), tostring(crewReachedEnd)))
     
         local roundResult = ""
         if Traitormod.SelectedGamemode.Completed then
             roundResult = Traitormod.Language.TraitorsWin .. "\n\n"
-            Traitormod.Stats.AddStat("Rounds", "Traitor rounds won", 1)
+            Traitormod.Stats.AddStat("Rounds", "Выигранные раунды предателей", 1)
         elseif crewMissionsComplete and crewReachedEnd then
             roundResult = Traitormod.Language.CrewWins .. "\n\n"
-            Traitormod.Stats.AddStat("Rounds", "Crew rounds won", 1)
+            Traitormod.Stats.AddStat("Rounds", "Выигранные раунды экипажа", 1)
         end
         
         if crewReachedEnd then
-            Traitormod.Stats.AddStat("Rounds", "Crew reached end", 1)
+            Traitormod.Stats.AddStat("Rounds", "Экипаж дошел до конца", 1)
         end
     
         endMessage = 
@@ -217,7 +217,7 @@ end)
 Hook.Add("roundEnd", "Traitormod.RoundEnd", function ()
     Traitormod.Debug("Round " .. Traitormod.RoundNumber .. " ended.")
     Traitormod.RoundNumber = Traitormod.RoundNumber + 1
-    Traitormod.Stats.AddStat("Rounds", "Rounds finished", 1)
+    Traitormod.Stats.AddStat("Rounds", "Раунды завершены", 1)
 
     Traitormod.PointsToBeGiven = {}
     Traitormod.AbandonedCharacters = {}
@@ -379,7 +379,7 @@ Hook.Add("clientConnected", "Traitormod.ClientConnected", function (client)
 
     if Traitormod.AbandonedCharacters[client.SteamID] and Traitormod.AbandonedCharacters[client.SteamID].IsDead then
         -- client left while char was alive -> but char is dead, so adjust life
-        Traitormod.Debug(string.format("%s connected, but his character died in the meantime...", Traitormod.ClientLogName(client)))
+        Traitormod.Debug(string.format("%s подключился, но его персонаж умер в это время...", Traitormod.ClientLogName(client)))
 
         local lifeMsg, lifeIcon = Traitormod.AdjustLives(client, -1)
         Traitormod.SendMessage(client, lifeMsg, lifeIcon)
@@ -391,7 +391,7 @@ Hook.Add("clientDisconnected", "Traitormod.ClientDisconnected", function (client
 
     -- if character was alive while disconnecting, make sure player looses live if he rejoins the round
     if client.Character and not client.Character.IsDead and client.Character.IsHuman then
-        Traitormod.Debug(string.format("%s disconnected with an alive character. Remembering for rejoin...", Traitormod.ClientLogName(client)))
+        Traitormod.Debug(string.format("%s отключился с живым персонажем. Напоминание для повторного подключения...", Traitormod.ClientLogName(client)))
         Traitormod.AbandonedCharacters[client.SteamID] = client.Character
     end
 end)
@@ -423,7 +423,7 @@ Traitormod.SpawnPointItem = function (inventory, amount, text, onSpawn, onUsed)
         Traitormod.PointItems[item].OnUsed = onUsed
 
         local terminal = item.GetComponentString("Terminal")
-        terminal.ShowMessage = text .. "\nThis LogBook contains " .. amount .. " points. Type \"claim\" into it to claim the points."
+        terminal.ShowMessage = text .. "\nЭтот журнал содержит " .. amount .. " очков. Введите \"claim\", чтобы получить очки."
         terminal.SyncHistory()
 
         item.set_InventoryIconColor(Color(0, 0, 255))
@@ -461,14 +461,14 @@ Hook.Patch("Barotrauma.Items.Components.Terminal", "ServerEventRead", function (
     if data == nil then return end
 
     Traitormod.AwardPoints(client, data.Amount)
-    Traitormod.SendMessage(client, "You have received " .. data.Amount .. " points.", "InfoFrameTabButton.Mission")
+    Traitormod.SendMessage(client, "Вы получили " .. data.Amount .. " очков.", "InfoFrameTabButton.Mission")
 
     if data.OnUsed then
         data.OnUsed(client)
     end
 
     local terminal = item.GetComponentString("Terminal")
-    terminal.ShowMessage = "Claimed by " .. client.Name
+    terminal.ShowMessage = "Полученно " .. client.Name
     terminal.SyncHistory()
 
     Traitormod.PointItems[item] = nil

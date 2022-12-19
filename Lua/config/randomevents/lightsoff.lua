@@ -26,7 +26,7 @@ event.Start = function ()
     end
 
     Timer.Wait(function ()
-        local text = "All lights suddenly turn off, but power is still on? What's going on?"
+        local text = "Все лампочки внезапно выключились, но питание по-прежнему включено? Что происходит?"
         Traitormod.RoundEvents.SendEventMessage(text, "EyeButton")     
     end, 6000)
 

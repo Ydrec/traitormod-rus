@@ -1,6 +1,6 @@
 local category = {}
 
-category.Name = "Traitor"
+category.Name = "Предатели"
 category.Decoration = "clown"
 category.FadeToBlack = true
 
@@ -10,7 +10,7 @@ end
 
 category.Products = {
     {
-        Name = "Explosive Auto-Injector",
+        Name = "Взрывной автоинжектор",
         Price = 2500,
         Limit = 1,
         IsLimitGlobal = false,
@@ -20,7 +20,7 @@ category.Products = {
             Entity.Spawner.AddItemToSpawnQueue(prefabInjector, client.Character.Inventory, nil, nil, function (item)
                 Entity.Spawner.AddItemToSpawnQueue(prefabUEX, client.Character.Inventory, nil, nil, function (item2)
                     item2.Tags = "medical"
-                    item2.Description = "A modified UEX that can be put inside an Auto-Injector headset."
+                    item2.Description = "Модифицированный UEX, который может быть помещен в гарнитуру с автоинжектором."
                     item2.set_InventoryIconColor(Color(0, 0, 255))
                     item2.SpriteColor = Color(0, 0, 255, 255)
 
@@ -34,7 +34,7 @@ category.Products = {
     },
 
     {
-        Name = "Invisible Suit (protip: hide your id card and keep your health full)",
+        Name = "Костюм-невидимка (совет: спрячьте свою идентификационную карту и имейте полное здоровье)",
         Price = 800,
         Limit = 1,
         IsLimitGlobal = false,
@@ -61,7 +61,7 @@ category.Products = {
     },
 
     {
-        Name = "Boom Stick",
+        Name = "Бум-палка",
         Price = 3200,
         Limit = 1,
         IsLimitGlobal = false,
@@ -70,7 +70,7 @@ category.Products = {
     },
 
     {
-        Name = "Shotgun Shell (x8)",
+        Name = "Патрон для дробовика (x8)",
         Price = 320,
         Limit = 5,
         IsLimitGlobal = false,
@@ -78,7 +78,7 @@ category.Products = {
     },
 
     {
-        Name = "Deadeye Carbine",
+        Name = "Меткий карабин",
         Price = 2900,
         Limit = 1,
         IsLimitGlobal = false,
@@ -86,7 +86,7 @@ category.Products = {
     },
 
     {
-        Name = "SMG Magazine",
+        Name = "Магазин для SMG",
         Price = 250,
         Limit = 5,
         IsLimitGlobal = false,
@@ -94,7 +94,7 @@ category.Products = {
     },
 
     {
-        Name = "Prototype Steam Cannon",
+        Name = "Прототип паровой пушки",
         Price = 1300,
         Limit = 1,
         IsLimitGlobal = false,
@@ -102,7 +102,7 @@ category.Products = {
     },
 
     {
-        Name = "Detonator",
+        Name = "Детонатор",
         Price = 950,
         Limit = 3,
         IsLimitGlobal = false,
@@ -118,7 +118,7 @@ category.Products = {
     },
 
     {
-        Name = "Stun Grenade",
+        Name = "Светошумовая граната",
         Price = 600,
         Limit = 3,
         IsLimitGlobal = false,
@@ -126,7 +126,7 @@ category.Products = {
     },
 
     {
-        Name = "Mutated Pomegrenade",
+        Name = "Мутировавщий взрывной гранат",
         Price = 530,
         Limit = 3,
         IsLimitGlobal = false,
@@ -134,7 +134,7 @@ category.Products = {
     },
 
     {
-        Name = "Turn Off Lights For 3 Minutes",
+        Name = "Выключить свет на 3 минуты",
         Price = 350,
         Limit = 1,
         IsLimitGlobal = true,
@@ -149,7 +149,7 @@ category.Products = {
     },
 
     {
-        Name = "Turn Off Communications For 5 Minutes",
+        Name = "Отключите связь на 5 минут",
         Price = 400,
         Limit = 1,
         IsLimitGlobal = true,

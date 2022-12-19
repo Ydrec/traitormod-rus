@@ -39,7 +39,7 @@ assassination.OnCharacterDied = function (client, affliction)
 
     Traitormod.Stats.AddClientStat("CrewDeaths", client, 1)
 
-    Traitormod.Log(string.format("%s %s died. Cause: %s Killer: %s", victimType, character.Name, cause, attackerName))
+    Traitormod.Log(string.format("%s %s умер. Причина: %s Убийца: %s", victimType, character.Name, cause, attackerName))
 
     return message, icon
 end

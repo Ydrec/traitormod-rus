@@ -1,66 +1,66 @@
 local category = {}
 
-category.Name = "Other"
+category.Name = "Другое"
 
 category.Products = {
     {
-        Name = "Moloch Shell Fragment",
+        Name = "Фрагмент панциря молоха",
         Price = 340,
         Limit = 1,
         Items = {"shellshield"}
     },
 
     {
-        Name = "Disposable Diving Suit",
+        Name = "Одноразовый водолазный скафандр",
         Price = 400,
         Limit = 1,
         Items = {"respawndivingsuit"}
     },
 
     {
-        Name = "Diving Mask",
+        Name = "Водолазная маска",
         Price = 280,
         Limit = 1,
         Items = {"divingmask"}
     },
 
     {
-        Name = "Bike Horn",
+        Name = "Велосипедный гудок",
         Price = 350,
         Limit = 10,
         Items = {"bikehorn"}
     },
 
     {
-        Name = "Guitar",
+        Name = "Гитара",
         Price = 50,
         Limit = 2,
         Items = {"guitar"}
     },
 
     {
-        Name = "Harmonica",
+        Name = "Губная гармошка",
         Price = 50,
         Limit = 2,
         Items = {"harmonica"}
     },
 
     {
-        Name = "Accordion",
+        Name = "Аккордеон",
         Price = 50,
         Limit = 2,
         Items = {"accordion"}
     },
 
     {
-        Name = "Pet Name Tag",
+        Name = "Жетон с именем питомнца",
         Price = 30,
         Limit = 5,
         Items = {"petnametag"}
     },
 
     {
-        Name = "Random Egg",
+        Name = "Рандомное яйцо",
         Price = 50,
         Limit = 5,
         Items = {"smallmudraptoregg", "tigerthresheregg", "crawleregg", "peanutegg", "psilotoadegg", "orangeboyegg", "balloonegg"},
@@ -68,7 +68,7 @@ category.Products = {
     },
 
     {
-        Name = "Assistant Bot",
+        Name = "Бот Ассистент",
         Price = 400,
         Limit = 5,
         Action = function (client, product, items)

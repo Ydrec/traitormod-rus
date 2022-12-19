@@ -1,185 +1,185 @@
 local category = {}
 
-category.Name = "Ores"
+category.Name = "Руды"
 
 category.Products = {
     {
-        Name = "Amblygonite",
+        Name = "Амблигонит",
         Price = 70,
         Limit = 10,
         Items = {"amblygonite"}
     },
 
     {
-        Name = "Aragonite",
+        Name = "Арагонит",
         Price = 70,
         Limit = 10,
         Items = {"aragonite"}
     },
 
     {
-        Name = "Bornite",
+        Name = "Борнит",
         Price = 70,
         Limit = 10,
         Items = {"bornite"}
     },
 
     {
-        Name = "Brockite",
+        Name = "Брокит",
         Price = 70,
         Limit = 10,
         Items = {"brockite"}
     },
 
     {
-        Name = "Cassiterite",
+        Name = "Касситерит",
         Price = 70,
         Limit = 10,
         Items = {"cassiterite"}
     },
 
     {
-        Name = "Chalcopyrite",
+        Name = "Халькопирит",
         Price = 70,
         Limit = 10,
         Items = {"chalcopyrite"}
     },
 
     {
-        Name = "Chamosite",
+        Name = "Сфалерит",
         Price = 65,
         Limit = 10,
         Items = {"chamosite"}
     },
 
     {
-        Name = "Chrysoprase",
+        Name = "Хризопраз",
         Price = 70,
         Limit = 10,
         Items = {"chrysoprase"}
     },
 
     {
-        Name = "Cryolite",
+        Name = "Криолит",
         Price = 70,
         Limit = 10,
         Items = {"cryolite"}
     },
 
     {
-        Name = "Diamond",
+        Name = "Алмаз",
         Price = 70,
         Limit = 10,
         Items = {"diamond"}
     },
 
     {
-        Name = "Esperite",
+        Name = "Эсперит",
         Price = 70,
         Limit = 10,
         Items = {"esperite"}
     },
 
     {
-        Name = "Galena",
+        Name = "Галена",
         Price = 80,
         Limit = 10,
         Items = {"galena"}
     },
 
     {
-        Name = "Graphite",
+        Name = "Графит",
         Price = 70,
         Limit = 10,
         Items = {"graphite"}
     },
 
     {
-        Name = "Hydroxyapatite",
+        Name = "Гидроксиапатит",
         Price = 70,
         Limit = 10,
         Items = {"hydroxyapatite"}
     },
 
     {
-        Name = "Ilmenite",
+        Name = "Ильменит",
         Price = 65,
         Limit = 10,
         Items = {"ilmenite"}
     },
 
     {
-        Name = "Iron Ore",
+        Name = "Железная руда",
         Price = 70,
         Limit = 10,
         Items = {"ironore"}
     },
 
     {
-        Name = "Langbeinite",
+        Name = "Лангбейнит",
         Price = 45,
         Limit = 10,
         Items = {"langbeinite"}
     },
 
     {
-        Name = "Lazulite",
+        Name = "Лазулит",
         Price = 75,
         Limit = 10,
         Items = {"lazulite"}
     },
 
     {
-        Name = "Polyhalite",
+        Name = "Полигалит",
         Price = 70,
         Limit = 10,
         Items = {"polyhalite"}
     },
 
     {
-        Name = "Pyromorphite",
+        Name = "Пироморфит",
         Price = 45,
         Limit = 10,
         Items = {"pyromorphite"}
     },
 
     {
-        Name = "Quartz",
+        Name = "Кварц",
         Price = 45,
         Limit = 10,
         Items = {"quartz"}
     },
 
     {
-        Name = "Sphalerite",
+        Name = "Сфалерит",
         Price = 45,
         Limit = 10,
         Items = {"sphalerite"}
     },
 
     {
-        Name = "Stannite",
+        Name = "Станнит",
         Price = 45,
         Limit = 10,
         Items = {"stannite"}
     },
 
     {
-        Name = "Sylvite",
+        Name = "Сильвин",
         Price = 45,
         Limit = 10,
         Items = {"sylvite"}
     },
 
     {
-        Name = "Titanite",
+        Name = "Титанит",
         Price = 45,
         Limit = 10,
         Items = {"titanite"}
     },
 
     {
-        Name = "Triphylite",
+        Name = "Трифилин",
         Price = 45,
         Limit = 10,
         Items = {"triphylite"}

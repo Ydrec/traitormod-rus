@@ -1,6 +1,6 @@
 local category = {}
 
-category.Name = "Medical"
+category.Name = "Медицина"
 
 -- this is just so i don't need to type out all the 34 different unresearched genetic materials
 local geneticMaterials = {}
@@ -12,119 +12,119 @@ end
 
 category.Products = {
     {
-        Name = "Bandage",
+        Name = "Бинт",
         Price = 130,
         Limit = 4,
         Items = {"bandage", "bandage"}
     },
 
     {
-        Name = "Opium",
+        Name = "Опий",
         Price = 130,
         Limit = 3,
         Items = {"opium", "opium"}
     },
 
     {
-        Name = "Saline",
+        Name = "Физраствор",
         Price = 125,
         Limit = 2,
         Items = {"saline"}
     },
 
     {
-        Name = "Ethanol",
+        Name = "Этанол",
         Price = 80,
         Limit = 4,
         Items = {"ethanol"}
     },
 
     {
-        Name = "Chlorine",
+        Name = "Хлорин",
         Price = 70,
         Limit = 4,
         Items = {"chlorine"}
     },
 
     {
-        Name = "Sulphuric Acid",
+        Name = "Серная кислота",
         Price = 60,
         Limit = 4,
         Items = {"sulphuricacid"}
     },
 
     {
-        Name = "Alien Blood",
+        Name = "Инопланетная кровь",
         Price = 105,
         Limit = 4,
         Items = {"alienblood"}
     },
 
     {
-        Name = "Adrenaline Gland",
+        Name = "Адреналиновая железа",
         Price = 60,
         Limit = 5,
         Items = {"adrenalinegland"}
     },
 
     {
-        Name = "Aquatic Poppy",
+        Name = "Водяной мак",
         Price = 70,
         Limit = 5,
         Items = {"aquaticpoppy"}
     },
 
     {
-        Name = "Elastic Plant",
+        Name = "Эластиновое растение",
         Price = 50,
         Limit = 5,
         Items = {"elastinplant"}
     },
 
     {
-        Name = "Fiber Plant",
+        Name = "Прядильное растение",
         Price = 60,
         Limit = 5,
         Items = {"fiberplant"}
     },
 
     {
-        Name = "Sea Yeast Shroom",
+        Name = "Морские дрожжи",
         Price = 65,
         Limit = 5,
         Items = {"yeastshroom"}
     },
 
     {
-        Name = "Slime Bacteria",
+        Name = "Слизистые бактерии",
         Price = 80,
         Limit = 5,
         Items = {"slimebacteria"}
     },
 
     {
-        Name = "Swim Bladder",
+        Name = "Плавательный пузырь",
         Price = 250,
         Limit = 5,
         Items = {"swimbladder"}
     },
 
     {
-        Name = "Gardening Kit",
+        Name = "Набор для садоводства",
         Price = 100,
         Limit = 2,
         Items = {"raptorbaneseed", "creepingorangevineseed", "saltvineseed", "tobaccovineseed", "smallplanter", "fertilizer", "wateringcan"}
     },
 
     {
-        Name = "Advanced Gene Splicer",
+        Name = "Усовершенствованный сплайсер генов",
         Price = 1800,
         Limit = 2,
         Items = {"advancedgenesplicer"}
     },
 
     {
-        Name = "Unresearched Genetic Material",
+        Name = "Неисследованный генетический материал",
         Price = 250,
         Limit = 10,
         ItemRandom = true,

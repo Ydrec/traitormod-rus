@@ -1,7 +1,8 @@
 Traitormod.Config = dofile(Traitormod.Path .. "/Lua/config/config.lua")
 
 Traitormod.Languages = {
-    dofile(Traitormod.Path .. "/Lua/language/english.lua")
+    --dofile(Traitormod.Path .. "/Lua/language/english.lua")
+    dofile(Traitormod.Path .. "/Lua/language/russian.lua")
 }
 
 Traitormod.Language = Traitormod.Languages[1]
@@ -413,6 +414,6 @@ end
 
 Traitormod.SendWelcome = function(client)
     if Traitormod.Config.SendWelcomeMessage or Traitormod.Config.SendWelcomeMessage == nil then
-        Game.SendDirectChatMessage("", "| Traitor Mod v" .. Traitormod.VERSION .. " |\n" .. Traitormod.GetDataInfo(client), nil, ChatMessageType.Server, client)
+        Game.SendDirectChatMessage("", "| Traitor Mod - RU v" .. Traitormod.VERSION .. " |\n" .. Traitormod.GetDataInfo(client), nil, ChatMessageType.Server, client)
     end
 end

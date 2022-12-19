@@ -86,10 +86,10 @@ assassination.GetRoundResult = function ()
             summary = summary .. "\n\n"
         end
 
-        local stats = "Targets killed: %d | Sub objectives: %d"
+        local stats = "Целей убито: %d | Подцелей: %d"
         local traitorName = Traitormod.GetJobString(character).. " " .. character.Name
         if traitor.Deaths > 0 then
-            traitorName = traitorName.." (Died)"
+            traitorName = traitorName.." (Умер)"
         end
 
         summary = (summary or "") .. string.format("> %s\n", traitorName) ..
@@ -97,7 +97,7 @@ assassination.GetRoundResult = function ()
         
         local client = Traitormod.FindClientCharacter(character)
         if client and assassination.AwardedPoints then
-            summary = summary .. string.format(" | Points gained: %d", math.floor(assassination.AwardedPoints[client.SteamID] or 0))
+            summary = summary .. string.format(" | Очков полученно: %d", math.floor(assassination.AwardedPoints[client.SteamID] or 0))
         end
     end
 
@@ -175,7 +175,7 @@ assassination.GetTraitorObjectiveSummary = function (character, roundSummary)
 
         local traitorName = character.Name
         if traitor.Deaths > 0 then
-            traitorName = traitorName.." (Died)"
+            traitorName = traitorName.." (Умер)"
         end
         
         return string.format("- %s %s\n\n%s\n%s\n%s\n%s", prefix, traitorName, lang.Objective, mainObjectiveText, lang.SubObjective, subObjectivesText)
@@ -232,7 +232,7 @@ assassination.GetValidTarget = function (roleFilter, sideObjective)
         end
     end
     
-    Traitormod.Debug("Selecting new random target out of "..#targets.." possible candidates"..debug)
+    Traitormod.Debug("Выбор новой случайной цели из "..#targets.." возможных кандидатов"..debug)
     if #targets > 0 then
         local chosenTarget = targets[math.random(1, #targets)]
         return chosenTarget
@@ -262,7 +262,7 @@ assassination.AssignInitialMissions = function (targetsAvailable)
         if Game.ServerSettings.AllowRespawn or MidRoundSpawn then  
             local thisRoundNumber = Traitormod.RoundNumber
             local delay = math.random(assassination.Config.NextDelayMin, assassination.Config.NextDelayMax)
-            Traitormod.Log("No valid main objectives found (all valid players dead?), retrying in " .. delay .. "s")
+            Traitormod.Log("Не найдены действительные главные цели (все действительные игроки мертвы?), повторная попытка в " .. delay .. "s")
 
             Timer.Wait(function ()
                 if thisRoundNumber ~= Traitormod.RoundNumber or not Game.RoundStarted then return end
@@ -273,7 +273,7 @@ assassination.AssignInitialMissions = function (targetsAvailable)
             end, delay * 1000)
         else
             -- if no respawn on there is nothing else to do
-            Traitormod.Error("No valid main objectives found (all valid players dead?)")
+            Traitormod.Error("Не найдены действительные главные цели (все действительные игроки мертвы?)")
         end
     else
         for character, traitor in pairs(assassination.Traitors) do
@@ -382,7 +382,7 @@ assassination.CheckObjectives = function (character, traitor)
                     -- choose next target after configured time passed
                     local delay = math.random(assassination.Config.NextDelayMin, assassination.Config.NextDelayMax)
                     local thisRoundNumber = assassination.CurrentRoundNumber
-                    Traitormod.Log("Choosing new target in " .. delay .. "s")
+                    Traitormod.Log("Выбор новой цели в " .. delay .. "с")
                     Timer.Wait(function ()
                         if not Game.RoundStarted or thisRoundNumber ~= Traitormod.RoundNumber or traitor.Failed or assassination.Completed then return end
                     

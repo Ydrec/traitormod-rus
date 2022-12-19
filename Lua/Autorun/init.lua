@@ -6,6 +6,7 @@ Traitormod.VERSION = "2.3.5"
 print(">> Traitor Mod v" .. Traitormod.VERSION)
 print(">> Github Contributors: evilfactory, MassCraxx, Philly-V, Qunk1, mc-oofert.")
 print(">> Special thanks to Qunk, Femboy69 and JoneK for helping in the development of this mod.")
+print(">> Translated to Russian by NotKarma.")
 
 local path = table.pack(...)[1]
 

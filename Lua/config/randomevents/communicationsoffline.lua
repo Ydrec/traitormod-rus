@@ -1,9 +1,9 @@
 local event = {}
 
--- Intense, can go from 0 to 1, defines how intense the round needs to be for the event to be triggered, 0 meaning the round is very chill and calm, 1 being that everything that could go wrong, has gone wrong.
--- MinRoundTime, the minimum amount of time that needs to be passed before the event can be triggered.
--- MaxRoundTime, same as above, but for max
--- ChancePerMinute, Every minute, this will roll a random to number to check if the event should be triggered.
+-- Intense (интенсивность), может изменяться от 0 до 1, определяет, насколько интенсивным должен быть раунд, чтобы событие сработало, 0 означает, что раунд очень холодный и спокойный, 1 означает, что все, что могло пойти не так, пошло не так.
+-- MinRoundTime, минимальное количество времени, которое должно пройти, чтобы событие могло быть запущено.
+-- MaxRoundTime, то же самое, что и выше, но для максимального значения.
+-- ChancePerMinute, каждую минуту бросается случайное число, чтобы проверить, должно ли сработать событие.
 
 
 event.Enabled = true
@@ -19,7 +19,7 @@ event.AmountTime = 5 -- Communications are offline for 5 minutes
 
 event.Start = function ()
 
-    local text = "Something is interfering with all our communications systems. It's been estimated that communications will be offline for atleast " .. event.AmountTime .. " minutes."
+    local text = "Что-то вмешивается во все наши системы связи. По оценкам, связь будет отключена как минимум на " .. event.AmountTime .. " минут."
 
     Traitormod.RoundEvents.SendEventMessage(text, "GameModeIcon.multiplayercampaign")
 

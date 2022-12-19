@@ -1,48 +1,55 @@
 __**The Traitor Mode**__
 
-> Evil Factory's Traitor Mod is a server-sided mod that overrides the vanilla traitor mode. If a round starts with enough players, some crew members may be selected as traitor and receive new objectives to prevent the rest of the crew from achieving their mission. The traitors are selected by a weight system, assuring that players who have not been traitors so often will be more likely to be chosen. 
-> Captains and Security Officers are always loyal to the ship and need to work together to find and restrain all traitors so the crew can complete their mission.
+Traitor Mod от Evil Factory - это серверный мод, который отменяет ванильный режим предателя. Если в начале раунда достаточно игроков, некоторые члены команды могут быть выбраны в качестве предателей и получить новые цели, чтобы помешать остальным членам команды выполнить свою миссию. Предатели выбираются по весовой системе, гарантирующей, что игроки, которые не так часто становились предателями, будут иметь больше шансов быть выбранными. 
+> Капитаны и офицеры безопасности всегда верны кораблю и должны работать вместе, чтобы найти и сдержать всех предателей, чтобы команда могла выполнить свою миссию.
 
-__**The Points System**__
+__**Система очков**__
 
-> Whenever a player gains a skill point, he also gains an amount of points. Traitors gain additional points by completing their objectives. Non-Traitor crew gains points by completing their missions and reaching the end of the level. 
-> Points will be persistently stored on the server and accumulate over rounds. If a player dies a number of times the amount of points will be reduced. Players can gain lives back by completing their missions.
-> On every round half of a player's points will be given the character as experience and can be used to pick talents.
+ Каждый раз, когда игрок получает очко навыка, он также получает определенное количество очков. Предатели получают дополнительные очки, выполняя свои задания. Команда, не являющаяся предателями, получает очки, выполняя задания и дойдя до конца уровня. 
+> Очки будут постоянно храниться на сервере и накапливаться в течение раундов. Если игрок умирает несколько раз, количество очков уменьшается. Игроки могут получать жизни обратно, выполняя задания.
+> В каждом раунде половина очков игрока будет даваться персонажу в качестве опыта и может быть использована для выбора талантов.
 
-__**Traitor objectives**__
+__**Предательские цели**__.
 
-> **Main objectives** - one of these will always be chosen
+> **Основные цели** - одна из них всегда будет выбрана
 > 
-> • *Assassination*     (700 points per target) 
-> Traitors will receive a target crew member to kill. Once the target is killed a new victim will be selected from all alive crew members. Every crew member can only be targeted once. If there are no new targets left, the traitor wins.
+> - *Убийство* (700 очков за цель) 
+> Предатели получат члена экипажа для убийства. После убийства цели новая жертва будет выбрана из всех живых членов экипажа. Каждый член экипажа может быть убит только один раз. Если новых целей не осталось, предатель побеждает.
 
-> **Sub objectives** - up to three of these may be chosen and can be done optionally to gain more points 
+> **Подцели** - можно выбрать до трех из них и выполнить по желанию, чтобы получить больше очков. 
 > 
-> • *Kidnapping*        (4500 points)
-> Put a selected security guard in handcuffs for a given time.
+> - *Похищение* (4500 очков)
+> Наденьте на выбранного охранника наручники на определенное время.
 > 
-> • *Poison Captain*    (1500 points)
-> Inject the acting captain with poison. This is only available for medic traitors
+> - *Ядовитый капитан* (1500 очков)
+> Отравить действующего капитана ядом. Это доступно только для медиков-предателей
 > 
-> • *Steal Captain ID*  (1500 points)
-> Take the ID card from your acting captain and put it in your inventory.
+> - *Украсть удостоверение капитана* (1500 очков)
+> Возьмите ID-карту у действующего капитана и положите ее в свой инвентарь.
 > 
-> • *Survive*                  (500 points, +1 Life)
-> Finish at least one main objective and be alive at the end of the round. Can be set to be always active.
+> > - *Выжить* (500 очков, +1 жизнь)
+> Завершите хотя бы одну главную цель и останьтесь в живых в конце раунда. Может быть установлено на постоянную активность.
  
-__**Events**__
+__**События**__.
 
-> There is a chance that a random event fires some time during the round.
-> • *Super Ballast Flora*
-> Several ballast tanks will be infested with alien plants.
+> Существует вероятность того, что во время раунда произойдет случайное событие.
+> - *Супер балластная флора*.
+> Несколько балластных цистерн будут заселены инопланетными растениями.
 > 
-> • *Communications Offline*
-> Will drastically reduce the range of all remote communication for the whole round.
+> - *Отключение связи*
+> На весь раунд резко сократится радиус действия всех средств удаленной связи.
 
-__**Source**__
+_**Установка**__
 
-> Evil Factory hosts this mod on git hub
+>Скачать архив с модом
+>Открыть кореневую папку Barotrauma и найти папку LocalMods
+>В папку Barotrauma\LocalMods разархивировать архив с модом.
+>Убедиться что папка traitormod-rus не дублируется внутри самой себя
+
+__**Источник**__
+
+> Evil Factory размещает этот мод на git hub
 > https://github.com/evilfactory/traitormod
 >
-> A legacy version of this mod is available on the steam workshop
+> Старая версия этого мода доступна на steam workshop
 > https://steamcommunity.com/sharedfiles/filedetails/?id=2559709754

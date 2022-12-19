@@ -1,6 +1,6 @@
 local category = {}
 
-category.Name = "Security"
+category.Name = "Служба безопасности"
 category.Decoration = "security"
 
 category.CanAccess = function(client)
@@ -11,7 +11,7 @@ end
 category.Products = {
 
     {
-        Name = "Handcuffs",
+        Name = "Наручники",
         Price = 100,
         Limit = 5,
         IsLimitGlobal = false,
@@ -19,7 +19,7 @@ category.Products = {
     },
 
     {
-        Name = "Stun Baton",
+        Name = "Шоковая дубинка",
         Price = 200,
         Limit = 2,
         IsLimitGlobal = false,
@@ -27,7 +27,7 @@ category.Products = {
     },
 
     {
-        Name = "Stun Gun",
+        Name = "Электрошокер",
         Price = 500,
         Limit = 1,
         IsLimitGlobal = false,
@@ -35,7 +35,7 @@ category.Products = {
     },
 
     {
-        Name = "Stun Gun Ammo (x4)",
+        Name = "Дротик для электрошокера",
         Price = 100,
         Limit = 1,
         IsLimitGlobal = false,
@@ -43,7 +43,7 @@ category.Products = {
     },
 
     {
-        Name = "Revolver Ammo (x6)",
+        Name = "Патроны для револьвера (x6)",
         Price = 250,
         Limit = 1,
         IsLimitGlobal = false,
@@ -51,7 +51,7 @@ category.Products = {
     },
 
     {
-        Name = "SMG Magazine (x2)",
+        Name = "Магазин для SMG (x2)",
         Price = 350,
         Limit = 5,
         IsLimitGlobal = false,
@@ -59,7 +59,7 @@ category.Products = {
     },
 
     {
-        Name = "Shotgun Shells (x8)",
+        Name = "Патроны для дробовика (x8)",
         Price = 300,
         Limit = 5,
         IsLimitGlobal = false,
@@ -67,7 +67,7 @@ category.Products = {
     },
 
     {
-        Name = "Stun Grenade",
+        Name = "Светошумовая граната",
         Price = 400,
         Limit = 3,
         IsLimitGlobal = false,
@@ -75,7 +75,7 @@ category.Products = {
     },
 
     {
-        Name = "Flamer",
+        Name = "Огнемет",
         Price = 800,
         Limit = 1,
         IsLimitGlobal = false,

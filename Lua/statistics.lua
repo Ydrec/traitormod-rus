@@ -109,17 +109,17 @@ Traitormod.AddCommand("!stats", function (client, args)
     if #args > 0 then
         statistics.ShowStats(client, args[1])
     else
-        local text = "Available stats:\n"
+        local text = "Доступная статистика:\n"
 
         if next(statistics.stats) == nil  then
-            text = "No statistics available yet. Go start a round to collect stats."
+            text = "Статистика пока не доступна. Начните раунд, чтобы собрать статистику."
         else
             local options = {}
             if not client.InGame then
                 for key, value in pairs(statistics.stats) do
                     text = text .. "\n>> " .. key
                 end
-                text = text .. "\n\nType '!stats [option]' to show statistics."
+                text = text .. "\n\nВведите '!stats [option]', чтобы показать статистику."
             elseif client.HasPermission(ClientPermissions.ConsoleCommands) then
                 -- if in game show convenient prompt
                 for key, value in pairs(statistics.stats) do
@@ -133,7 +133,7 @@ Traitormod.AddCommand("!stats", function (client, args)
                 end)
                 return true
             else
-                text = "Statistics are not available in game. Use this command in the lobby."
+                text = "Статистика недоступна в игре. Используйте эту команду в лобби."
             end
         end
 

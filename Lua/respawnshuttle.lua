@@ -58,7 +58,7 @@ local function FindSpawnPosition()
     local bestPosition = potentialSpawnPositions[1]
 
     if bestPosition == nil then
-        Traitormod.Error("Couldn't find a good spawn position for the respawn shuttle!")
+        Traitormod.Error("Не удалось найти хорошую позицию для респауна шаттла!")
         return Vector2(Level.Loaded.Size.X / 2, Level.Loaded.Size.Y / 2)
     end
 
@@ -149,7 +149,7 @@ Hook.Add("think", "RespawnShuttle.Think", function ()
             timerActive = true
             respawnTimer = Game.ServerSettings.RespawnInterval
             lastTimerDisplay = respawnTimer
-            RespawnMessage("Respawn in " .. math.floor(respawnTimer) .. " seconds.")
+            RespawnMessage("Возрождение через " .. math.floor(respawnTimer) .. " секунд.")
         end
     else
         timerActive = false
@@ -171,7 +171,7 @@ Hook.Add("think", "RespawnShuttle.Think", function ()
 
     if (lastTimerDisplay - respawnTimer) > timerDisplayMax then
         lastTimerDisplay = respawnTimer
-        RespawnMessage("Respawn in " .. math.floor(respawnTimer) .. " seconds.")
+        RespawnMessage("Возрождение через " .. math.floor(respawnTimer) .. " секунд.")
     end
 
     if transportTimer <= 0 and not timerActive and transporting then

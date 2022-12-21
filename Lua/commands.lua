@@ -282,7 +282,7 @@ Traitormod.AddCommand({"!addlife", "!addlive", "!addlifes", "!addlives"}, functi
 
     for lifeClient in gainLifeClients do
         local lifeMsg, lifeIcon = Traitormod.AdjustLives(lifeClient, amount)
-        local msg = string.format("Admin added %s lives to %s.", amount, Traitormod.ClientLogName(lifeClient))
+        local msg = string.format("Admin added %s lives to %s", amount, Traitormod.ClientLogName(lifeClient))
 
         if lifeMsg then
             Traitormod.SendMessage(lifeClient, lifeMsg, lifeIcon)

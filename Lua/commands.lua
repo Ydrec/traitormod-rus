@@ -18,7 +18,7 @@ Traitormod.AddCommand("!helptraitor", function (client, args)
 end)
 
 Traitormod.AddCommand("!version", function (client, args)
-    Traitormod.SendMessage(client, "Работает Traitor Mod - RU от Evil Factory v" .. Traitormod.VERSION)
+    Traitormod.SendMessage(client, "123 Running Evil Factory's Traitor Mod v" .. Traitormod.VERSION)
 
     return true
 end)
@@ -59,7 +59,7 @@ Traitormod.AddCommand("!toggletraitor", function (client, args)
         Traitormod.SetData(client, "NonTraitor", not toggle)
         Traitormod.SaveData() -- move this to player disconnect someday...
         
-        Traitormod.Log(Traitormod.ClientLogName(client) .. " может стать предателем: " .. tostring(toggle))
+        Traitormod.Log(Traitormod.ClientLogName(client) .. " может стать трейтором: " .. tostring(toggle))
     end
 
     Traitormod.SendMessage(client, text)
@@ -81,7 +81,7 @@ end)
 
 Traitormod.AddCommand({"!suicide", "!kill", "!death"}, function (client, args)
     if client.Character == nil or client.Character.IsDead then
-        Traitormod.SendMessage(client, "Ты уже мертв!")
+        Traitormod.SendMessage(client, "You are already dead!")
         return true
     end
 
@@ -112,7 +112,7 @@ Traitormod.AddCommand("!tc", function (client, args)
         
             return (not Traitormod.Config.TraitorBroadcastHearable)
         else
-            feedback = "Использование: !tc [Сообщение]"
+            feedback = "Usage: !tc [Message]"
         end
     end
 
@@ -138,10 +138,10 @@ Traitormod.AddCommand("!tdm", function (client, args)
                 feedback = string.format("[To %s]: %s", Traitormod.ClientLogName(found), msg)
                 return true
             else
-                feedback = "Имя не найдено."
+                feedback = "Name not found."
             end
         else
-            feedback = "Использование: !tdm [Имя] [Сообщение]"
+            feedback = "Usage: !tdm [Name] [Message]"
         end
     else
         feedback = Traitormod.Language.NoTraitor
@@ -199,7 +199,7 @@ Traitormod.AddCommand({"!allpoint", "!allpoints"}, function (client, args)
     local messageToSend = ""
 
     for index, value in pairs(Client.ClientList) do
-        messageToSend = messageToSend .. "\n" .. value.Name .. ": " .. math.floor(Traitormod.GetData(value, "Points") or 0) .. " Очки - " .. math.floor(Traitormod.GetData(value, "Weight") or 0) .. " Вес"
+        messageToSend = messageToSend .. "\n" .. value.Name .. ": " .. math.floor(Traitormod.GetData(value, "Points") or 0) .. " Points - " .. math.floor(Traitormod.GetData(value, "Weight") or 0) .. " Weight"
     end
 
     Traitormod.SendMessage(client, messageToSend)
@@ -209,12 +209,12 @@ end)
 
 Traitormod.AddCommand({"!addpoint", "!addpoints"}, function (client, args)
     if not client.HasPermission(ClientPermissions.All) then
-        Traitormod.SendMessage(client, "У вас нет прав на добавление очков.")
+        Traitormod.SendMessage(client, "You do not have permissions to add points.")
         return
     end
     
     if #args < 2 then
-        Traitormod.SendMessage(client, "Неправильное количество аргументов. использование: !addpoint \"Имя клиента\" 500")
+        Traitormod.SendMessage(client, "Incorrect amount of arguments. usage: !addpoint \"Client Name\" 500")
 
         return true
     end
@@ -223,14 +223,14 @@ Traitormod.AddCommand({"!addpoint", "!addpoints"}, function (client, args)
     local amount = tonumber(table.remove(args, 1))
 
     if amount == nil or amount ~= amount then
-        Traitormod.SendMessage(client, "Недопустимое значение числа.")
+        Traitormod.SendMessage(client, "Invalid number value.")
         return true
     end
 
     local found = Traitormod.FindClient(name)
 
     if found == nil then
-        Traitormod.SendMessage(client, "Не удалось найти клиента с именем / steamID " .. name)
+        Traitormod.SendMessage(client, "Couldn't find a client with name / steamID " .. name)
         return true
     end
 
@@ -238,7 +238,7 @@ Traitormod.AddCommand({"!addpoint", "!addpoints"}, function (client, args)
 
     Traitormod.SendMessage(client, string.format(Traitormod.Language.PointsAwarded, amount), "InfoFrameTabButton.Mission")
 
-    local msg = string.format("Администратор добавил %s очков к %s.", amount, Traitormod.ClientLogName(found))
+    local msg = string.format("Admin added %s points to %s.", amount, Traitormod.ClientLogName(found))
     Traitormod.SendMessageEveryone(msg)
     msg = Traitormod.ClientLogName(client) .. ": " .. msg
     Traitormod.Log(msg)
@@ -250,7 +250,7 @@ Traitormod.AddCommand({"!addlife", "!addlive", "!addlifes", "!addlives"}, functi
     if not client.HasPermission(ClientPermissions.ConsoleCommands) then return end
 
     if #args < 1 then
-        Traitormod.SendMessage(client, "Неправильное количество аргументов. использование: !addlife \"Имя клиента\" 1")
+        Traitormod.SendMessage(client, "Incorrect amount of arguments. usage: !addlife \"Client Name\" 1")
 
         return true
     end
@@ -263,7 +263,7 @@ Traitormod.AddCommand({"!addlife", "!addlive", "!addlifes", "!addlives"}, functi
     end
 
     if amount == nil or amount ~= amount then
-        Traitormod.SendMessage(client, "Недопустимое значение числа.")
+        Traitormod.SendMessage(client, "Invalid number value.")
         return true
     end
 
@@ -274,7 +274,7 @@ Traitormod.AddCommand({"!addlife", "!addlive", "!addlifes", "!addlives"}, functi
         local found = Traitormod.FindClient(name)
 
         if found == nil then
-            Traitormod.SendMessage(client, "Не удалось найти клиента с именем / steamID " .. name)
+            Traitormod.SendMessage(client, "Couldn't find a client with name / steamID " .. name)
             return true
         end
         table.insert(gainLifeClients, found)
@@ -282,13 +282,13 @@ Traitormod.AddCommand({"!addlife", "!addlive", "!addlifes", "!addlives"}, functi
 
     for lifeClient in gainLifeClients do
         local lifeMsg, lifeIcon = Traitormod.AdjustLives(lifeClient, amount)
-        local msg = string.format("Администратор добавил %s жизней к %s"., amount, Traitormod.ClientLogName(lifeClient))
+        local msg = string.format("Admin added %s lives to %s.", amount, Traitormod.ClientLogName(lifeClient))
 
         if lifeMsg then
             Traitormod.SendMessage(lifeClient, lifeMsg, lifeIcon)
             Traitormod.SendMessageEveryone(msg)
         else
-            Game.SendDirectChatMessage("", Traitormod.ClientLogName(lifeClient) .. " уже имеет максимальное количество жизней.", nil, Traitormod.Config.Error, client)
+            Game.SendDirectChatMessage("", Traitormod.ClientLogName(lifeClient) .. " already has maximum lives.", nil, Traitormod.Config.Error, client)
         end
     end
 
@@ -320,13 +320,13 @@ Traitormod.AddCommand("!revive", function (client, args)
             Traitormod.SendMessage(reviveClient, lifeMsg, lifeIcon)
         end
 
-        Game.SendDirectChatMessage("", "Персонаж " .. Traitormod.ClientLogName(reviveClient) .. " возрождается и возвращается 1 жизнь.", nil, ChatMessageType.Error, client)
-        Traitormod.SendMessageEveryone(string.format("Администратор возрождил %s", Traitormod.ClientLogName(reviveClient)))
+        Game.SendDirectChatMessage("", "Character of " .. Traitormod.ClientLogName(reviveClient) .. " revived and given back 1 life.", nil, ChatMessageType.Error, client)
+        Traitormod.SendMessageEveryone(string.format("Admin revived %s", Traitormod.ClientLogName(reviveClient)))
 
     elseif reviveClient.Character then
-        Game.SendDirectChatMessage("", "Персонаж " .. Traitormod.ClientLogName(reviveClient) .. " не мертв.", nil, ChatMessageType.Error, client)
+        Game.SendDirectChatMessage("", "Character of " .. Traitormod.ClientLogName(reviveClient) .. " is not dead.", nil, ChatMessageType.Error, client)
     else
-        Game.SendDirectChatMessage("", "Персонаж " .. Traitormod.ClientLogName(reviveClient) .. " не найден.", nil, ChatMessageType.Error, client)
+        Game.SendDirectChatMessage("", "Character of " .. Traitormod.ClientLogName(reviveClient) .. " not found.", nil, ChatMessageType.Error, client)
     end
 
     return true
@@ -335,7 +335,7 @@ end)
 Traitormod.AddCommand("!ongoingevents", function (client, args)
     if not client.HasPermission(ClientPermissions.ConsoleCommands) then return end
 
-    local text = "Текущие события: "
+    local text = "On Going Events: "
     for key, value in pairs(Traitormod.RoundEvents.OnGoingEvents) do
         text = text .. "\"" .. value.Name .. "\" "
     end
@@ -349,7 +349,7 @@ Traitormod.AddCommand("!triggerevent", function (client, args)
     if not client.HasPermission(ClientPermissions.ConsoleCommands) then return end
 
     if #args < 1 then
-        Traitormod.SendMessage(client, "Использование: !triggerevent <имя события>")
+        Traitormod.SendMessage(client, "Usage: !triggerevent <эвент name>")
         return true
     end
 
@@ -361,12 +361,12 @@ Traitormod.AddCommand("!triggerevent", function (client, args)
     end
 
     if event == nil then
-        Traitormod.SendMessage(client, "Событие " .. args[1] .. " doesnt exist.")
+        Traitormod.SendMessage(client, "Event " .. args[1] .. " doesnt exist.")
         return true
     end
 
     Traitormod.RoundEvents.TriggerEvent(event.Name)
-    Traitormod.SendMessage(client, "Запущенно событие " .. event.Name)
+    Traitormod.SendMessage(client, "Triggered event " .. event.Name)
 
     return true
 end)
@@ -375,31 +375,31 @@ end)
 local preventSpam = {}
 Traitormod.AddCommand({"!droppoints", "!droppoint", "!dropoint", "!dropoints"}, function (client, args)
     if preventSpam[client] ~= nil and Timer.GetTime() < preventSpam[client] then
-        Traitormod.SendMessage(client, "Пожалуйста, подождите немного, прежде чем снова использовать эту команду.")
+        Traitormod.SendMessage(client, "Please wait a bit before using this command again.")
         return true
     end
 
     if client.Character == nil or client.Character.IsDead or client.Character.Inventory == nil then
-        Traitormod.SendMessage(client, "Вы должны быть живы, чтобы использовать эту команду.")
+        Traitormod.SendMessage(client, "You must be alive to use this command.")
         return true
     end
 
     if #args < 1 then
-        Traitormod.SendMessage(client, "Использование:  !droppoints количество")
+        Traitormod.SendMessage(client, "Usage: !droppoints amount")
         return true
     end
 
     local amount = tonumber(args[1])
 
     if amount == nil or amount ~= amount or amount < 100 or amount > 100000 then
-        Traitormod.SendMessage(client, "Пожалуйста, укажите действительное число в диапазоне от 100 до 100000.")
+        Traitormod.SendMessage(client, "Please specify a valid number between 100 and 100000.")
         return true
     end
 
     local availablePoints = Traitormod.GetData(client, "Points") or 0
 
     if amount > availablePoints then
-        Traitormod.SendMessage(client, "У вас недостаточно очков для сброса.")
+        Traitormod.SendMessage(client, "You don't have enough points to drop.")
         return true
     end
 

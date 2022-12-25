@@ -18,7 +18,7 @@ Traitormod.AddCommand("!helptraitor", function (client, args)
 end)
 
 Traitormod.AddCommand("!version", function (client, args)
-    Traitormod.SendMessage(client, "123 Running Evil Factory's Traitor Mod v" .. Traitormod.VERSION)
+    Traitormod.SendMessage(client, "Running Evil Factory's Traitor Mod v" .. Traitormod.VERSION)
 
     return true
 end)
